@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Marcellus+SC&display=swap');
+
+.kara-font {
+  font-family: 'Marcellus SC', serif;
+}
+
+.bg-kara {
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+}
+
+.btn-kara {
+  @apply px-6 py-3 rounded-lg bg-slate-700 hover:bg-slate-600 text-white transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5;
+}
+
+.content-transition {
+  @apply transition-all duration-500 ease-in-out;
+}
+
+.karma-symbol {
+  filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.5));
+}
+
+.kara-glow {
+  text-shadow: 0 0 10px rgba(96, 165, 250, 0.7),
+               0 0 20px rgba(96, 165, 250, 0.5),
+               0 0 30px rgba(96, 165, 250, 0.3);
+}
+
+/* Karma Frame Animation */
+@keyframes karmaGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.5));
+  }
+  50% {
+    filter: drop-shadow(0 0 12px rgba(59, 130, 246, 0.7));
+  }
+}
