@@ -9,11 +9,17 @@
 }
 
 .bg-kara {
-  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  background: url('https://cdn.discordapp.com/attachments/1303701413758636045/1304144069202677780/borutotbvgif.gif?ex=672e524f&is=672d00cf&hm=ab07a4451232d344041fd7c107df9b52693fbd5e3dff7ca08b30d5cbc625f13f&') center/cover no-repeat fixed;
+  background-color: rgba(30, 41, 59, 0.5);
+  background-blend-mode: overlay;
 }
 
 .btn-kara {
-  @apply px-6 py-3 rounded-lg bg-slate-700 hover:bg-slate-600 text-white transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5;
+  @apply px-6 py-3 rounded-lg bg-slate-700/80 hover:bg-slate-600/80 text-white transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5;
+  text-shadow: 1px 1px 0 #000,
+              -1px -1px 0 #000,
+              1px -1px 0 #000,
+              -1px 1px 0 #000;
 }
 
 .content-transition {
@@ -25,9 +31,13 @@
 }
 
 .kara-glow {
-  text-shadow: 0 0 10px rgba(96, 165, 250, 0.7),
-               0 0 20px rgba(96, 165, 250, 0.5),
-               0 0 30px rgba(96, 165, 250, 0.3);
+  text-shadow: 1px 1px 0 #000,
+              -1px -1px 0 #000,
+              1px -1px 0 #000,
+              -1px 1px 0 #000,
+              0 0 10px rgba(96, 165, 250, 0.7),
+              0 0 20px rgba(96, 165, 250, 0.5),
+              0 0 30px rgba(96, 165, 250, 0.3);
 }
 
 /* Karma Frame Animation */
@@ -38,4 +48,26 @@
   50% {
     filter: drop-shadow(0 0 12px rgba(59, 130, 246, 0.7));
   }
+}
+
+/* Social Icons Glow Effects */
+.guns-text-glow {
+  @apply text-purple-500 font-black;
+  text-shadow: 0 0 10px rgba(168, 85, 247, 0.8),
+              0 0 20px rgba(168, 85, 247, 0.6),
+              0 0 30px rgba(168, 85, 247, 0.4);
+  letter-spacing: 0.1em;
+}
+
+.discord-glow {
+  @apply text-white;
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.7))
+         drop-shadow(0 0 12px rgba(255, 255, 255, 0.4));
+}
+
+.text-outline {
+  text-shadow: 1px 1px 0 #000,
+              -1px -1px 0 #000,
+              1px -1px 0 #000,
+              -1px 1px 0 #000;
 }

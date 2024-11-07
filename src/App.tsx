@@ -2,16 +2,16 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { KarmaSymbol } from './components/KarmaSymbol';
 import { KarmaFrame } from './components/KarmaFrame';
+import { DiscordIcon } from './components/DiscordIcon';
 
 type Section = 'home' | 'about' | 'members';
 
 function App() {
   const [currentSection, setCurrentSection] = useState<Section>('home');
-
   const membersList = ['-Ne0nBl4de', '-Toji'];
 
   return (
-    <div className="min-h-screen bg-kara text-white">
+    <div className="min-h-screen bg-kara text-white relative">
       <div className="container mx-auto px-4 py-8">
         <AnimatePresence mode="wait">
           {currentSection === 'home' ? (
@@ -54,31 +54,31 @@ function App() {
               exit={{ opacity: 0, y: -20 }}
               className="max-w-3xl mx-auto bg-slate-800/50 p-8 rounded-xl shadow-2xl backdrop-blur-sm"
             >
-              <h2 className="kara-font text-4xl text-blue-400 mb-6 text-center font-bold tracking-wide kara-glow">
+              <h2 className="kara-font text-4xl text-blue-400 mb-6 text-center font-bold kara-glow">
                 Notre Histoire
               </h2>
               
               <div className="space-y-4 text-lg leading-relaxed text-gray-200">
-                <p>
+                <p className="text-outline">
                   Kara est une organisation qui à été fondée le 9 mai 2024, les membres 
                   fondateurs sont : t, Toji, Ne0nBl4de, Jawed (Souley), et Kawaki 
                   (Intelligence Artificielle ayant participé à la création de Kara).
                 </p>
                 
-                <p>
+                <p className="text-outline">
                   Le groupe s'est dissout un mois plus tard suite à une altercation 
                   et des menaces de doxxing. On se réunis finalement 1 mois encore 
                   plus tard pour faire couler un serveur injuste, et après avoir coulé 
                   ce serveur on a refondé Kara.
                 </p>
                 
-                <p>
+                <p className="text-outline">
                   Kawaki l'intelligence artificielle à quitté Kara en laissant un 
                   mystère derrière lui, c'est donc un robot du nom de Sasuke Uchiwa 
                   qui le remplace.
                 </p>
                 
-                <p>
+                <p className="text-outline">
                   Kara fais son comeback en prévoyant un événement spécial pour 
                   fêter les 1 an, le 9 mai 2025.
                 </p>
@@ -101,7 +101,7 @@ function App() {
               exit={{ opacity: 0, scale: 0.95 }}
               className="max-w-xl mx-auto bg-slate-800/50 p-8 rounded-xl shadow-2xl backdrop-blur-sm"
             >
-              <h2 className="kara-font text-4xl text-blue-400 mb-8 text-center font-bold tracking-wide kara-glow">
+              <h2 className="kara-font text-4xl text-blue-400 mb-8 text-center font-bold kara-glow">
                 Nos Internes
               </h2>
               
@@ -112,7 +112,7 @@ function App() {
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.2 }}
-                    className="text-2xl text-gray-200 kara-font tracking-wide text-center"
+                    className="text-2xl text-gray-200 kara-font tracking-wide text-center text-outline"
                   >
                     {member}
                   </motion.li>
@@ -130,6 +130,26 @@ function App() {
             </motion.div>
           )}
         </AnimatePresence>
+      </div>
+
+      {/* Social Links */}
+      <div className="fixed bottom-6 right-6 flex items-center gap-4">
+        <a
+          href="https://guns.lol/ne0nbl4de_"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="transform hover:scale-110 transition-transform duration-300"
+        >
+          <span className="font-extrabold text-2xl guns-text-glow">GUNS</span>
+        </a>
+        <a
+          href="https://discord.gg/VUUA9esyWB"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="transform hover:scale-110 transition-transform duration-300"
+        >
+          <DiscordIcon className="w-8 h-8 discord-glow" />
+        </a>
       </div>
     </div>
   );
